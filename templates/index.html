@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department FAQ Search</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex items-center justify-center p-4">
+
+    <div id="faq-app" class="w-full max-w-xl" data-client-id="{{ client_id }}" data-client-valid="{{ client_valid|lower }}">
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold tracking-tight text-white mb-2">Department FAQ Search</h1>
+            <p class="text-slate-400 text-sm">Search questions in your department</p>
+        </div>
+
+        <p id="client-status" class="mb-4 text-center text-sm text-rose-300 {% if client_valid %}hidden{% endif %}" role="status">
+            A valid client ID is required. Use the client URL provided by your administrator.
+        </p>
+
+        <label for="department-select" class="mb-2 block text-sm font-medium text-slate-300">Department</label>
+        <select
+            id="department-select"
+            {% if not client_valid %}disabled{% endif %}
+            class="mb-4 w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-3 text-white focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:cursor-not-allowed disabled:opacity-50"
+        >
+            <option value="">All departments</option>
+            {% for department in departments %}
+            <option value="{{ department }}">{{ department }}</option>
+            {% endfor %}
+        </select>
+
+        <!-- Search Bar Container -->
+        <div class="relative">
+            <div class="relative flex items-center">
+                <svg class="absolute left-4 w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+                <input 
+                    type="text" 
+                    id="search-input" 
+                    placeholder="Search a question..." 
+                    autocomplete="off"
+                    {% if not client_valid %}disabled{% endif %}
+                    class="w-full pl-12 pr-4 py-3.5 bg-slate-800 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 shadow-lg transition-all duration-200"
+                >
+            </div>
+
+            <!-- Suggestions Dropdown -->
+            <ul id="suggestions-box" class="absolute left-0 right-0 mt-2 bg-slate-800 border border-slate-700 rounded-xl shadow-2xl overflow-hidden hidden z-50 divide-y divide-slate-700/50">
+                <!-- Dynamically injected items appear here -->
+            </ul>
+        </div>
+
+        <section id="answer-panel" class="hidden mt-6 rounded-xl border border-slate-700 bg-slate-800 p-5 shadow-xl" aria-live="polite">
+            <h2 id="answer-question" class="mb-3 text-lg font-semibold text-white"></h2>
+            <p id="answer-text" class="whitespace-pre-wrap text-sm leading-6 text-slate-300"></p>
+        </section>
+    </div>
+
+    <!-- JavaScript for Live Fetching -->
+    <script>
+        const faqApp = document.getElementById('faq-app');
+        const clientId = faqApp.dataset.clientId;
+        const clientValid = faqApp.dataset.clientValid === 'true';
+        const searchInput = document.getElementById('search-input');
+        const departmentSelect = document.getElementById('department-select');
+        const suggestionsBox = document.getElementById('suggestions-box');
+        const answerPanel = document.getElementById('answer-panel');
+        const answerQuestion = document.getElementById('answer-question');
+        const answerText = document.getElementById('answer-text');
+        let debounceTimer;
+        let activeSearch;
+        let selectionRequest = 0;
+
+        async function showAnswer(faqId) {
+            const requestId = ++selectionRequest;
+            answerQuestion.textContent = 'Loading answer...';
+            answerText.textContent = '';
+            answerPanel.classList.remove('hidden');
+
+            try {
+                const params = new URLSearchParams({
+                    client_id: clientId,
+                    department: departmentSelect.value
+                });
+                const response = await fetch(`/answer/${encodeURIComponent(faqId)}?${params}`);
+                if (!response.ok) {
+                    throw new Error('Answer request failed');
+                }
+                const faq = await response.json();
+                if (requestId !== selectionRequest) return;
+
+                answerQuestion.textContent = faq.question;
+                answerText.textContent = faq.answer;
+            } catch (error) {
+                if (requestId !== selectionRequest) return;
+                answerQuestion.textContent = 'Unable to load this answer.';
+            }
+        }
+
+        searchInput.addEventListener('input', function() {
+            const query = this.value.trim();
+
+            clearTimeout(debounceTimer);
+            if (activeSearch) activeSearch.abort();
+            selectionRequest += 1;
+            answerPanel.classList.add('hidden');
+
+            if (query.length === 0 || !clientValid) {
+                suggestionsBox.classList.add('hidden');
+                suggestionsBox.innerHTML = '';
+                return;
+            }
+
+            // Debounce to prevent flooding backend on every keystroke
+            debounceTimer = setTimeout(async () => {
+                activeSearch = new AbortController();
+                try {
+                    const params = new URLSearchParams({
+                        q: query,
+                        client_id: clientId,
+                        department: departmentSelect.value
+                    });
+                    const response = await fetch(`/suggest?${params}`, {
+                        signal: activeSearch.signal
+                    });
+                    if (!response.ok) throw new Error('Suggestion request failed');
+                    const data = await response.json();
+                    if (searchInput.value.trim() !== query) return;
+
+                    suggestionsBox.replaceChildren();
+                    data.forEach(item => {
+                        const li = document.createElement('li');
+                        const button = document.createElement('button');
+                        button.type = 'button';
+                        button.className = 'w-full px-4 py-3 text-left hover:bg-indigo-600/20 focus:bg-indigo-600/20 focus:outline-none';
+
+                        const question = document.createElement('span');
+                        question.className = 'block truncate text-sm text-slate-200';
+                        question.textContent = item.question;
+
+                        button.append(question);
+                        button.addEventListener('click', () => {
+                            searchInput.value = item.question;
+                            if (activeSearch) activeSearch.abort();
+                            suggestionsBox.classList.add('hidden');
+                            showAnswer(item.id);
+                        });
+                        li.appendChild(button);
+                        suggestionsBox.appendChild(li);
+                    });
+
+                    suggestionsBox.classList.toggle('hidden', data.length === 0);
+                } catch (error) {
+                    if (error.name !== 'AbortError') {
+                        console.error('Error fetching suggestions:', error);
+                        suggestionsBox.classList.add('hidden');
+                    }
+                }
+            }, 250); // 250ms debounce delay
+        });
+
+        departmentSelect.addEventListener('change', function() {
+            suggestionsBox.classList.add('hidden');
+            suggestionsBox.replaceChildren();
+            answerPanel.classList.add('hidden');
+            selectionRequest += 1;
+            if (activeSearch) activeSearch.abort();
+            if (searchInput.value.trim()) searchInput.dispatchEvent(new Event('input'));
+        });
+
+        // Hide suggestions when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!searchInput.contains(e.target) && !suggestionsBox.contains(e.target)) {
+                suggestionsBox.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

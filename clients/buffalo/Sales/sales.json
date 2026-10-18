@@ -1,0 +1,82 @@
+[
+  {
+    "question": "How do I request a sales quote?",
+    "answer": "Send the sales team the products or services you need, expected quantities, delivery location, and target dates. The team can prepare a quote based on the details provided."
+  },
+  {
+    "question": "What information should I include when contacting Sales?",
+    "answer": "Include your name, organization, preferred contact details, the product or service you are interested in, approximate quantity, and any relevant timeline or requirements."
+  },
+  {
+    "question": "How can I check the status of my order?",
+    "answer": "Contact your sales representative or use the order portal if one is available. Include your order number so the team can locate the latest status."
+  },
+  {
+    "question": "Can I change an order after placing it?",
+    "answer": "Order changes may be possible before processing or shipment. Contact Sales as soon as possible with your order number and the requested changes."
+  },
+  {
+    "question": "How do I cancel an order?",
+    "answer": "Contact your sales representative or the order support team promptly with your order number. Cancellation eligibility depends on the order's processing and fulfillment status."
+  },
+  {
+    "question": "How do I ask about product availability?",
+    "answer": "Contact Sales with the product name or item number, the quantity you need, and your preferred delivery date. The team can confirm current availability and expected lead time."
+  },
+  {
+    "question": "Can Sales help me choose the right product?",
+    "answer": "Yes. Describe your use case, required features, budget range, and any constraints. A sales representative can help identify suitable options."
+  },
+  {
+    "question": "Where can I find product pricing?",
+    "answer": "Current pricing may be listed in the product catalog or customer portal. For a tailored price, request a quote and include the products, quantities, and delivery details."
+  },
+  {
+    "question": "Are volume discounts available?",
+    "answer": "Volume pricing may be available depending on the products, quantities, and agreement terms. Contact Sales with the quantities you are considering to request pricing."
+  },
+  {
+    "question": "How long is a sales quote valid?",
+    "answer": "The quote's expiration date should be stated on the quote document. Contact the sales representative if the date is missing or you need the quote extended."
+  },
+  {
+    "question": "Can I request a product demonstration?",
+    "answer": "Contact Sales with the product you are interested in and your availability. The team can let you know whether a demonstration is offered and arrange a suitable time."
+  },
+  {
+    "question": "How do I become a reseller or sales partner?",
+    "answer": "Contact the partnerships or sales team with information about your organization, market, and proposed partnership. They can explain qualification requirements and next steps."
+  },
+  {
+    "question": "Does Sales offer samples or trial access?",
+    "answer": "Sample or trial availability varies by product and customer eligibility. Ask Sales about the option for the product you are considering and any applicable terms."
+  },
+  {
+    "question": "How do I update my sales contact information?",
+    "answer": "Contact your sales representative or update your details in the customer portal, if available. Provide the account name and the new contact information."
+  },
+  {
+    "question": "Who should I contact about a sales agreement?",
+    "answer": "Contact the sales representative who prepared the agreement. Include the agreement reference and identify the terms or sections you would like to discuss."
+  },
+  {
+    "question": "Can I request special delivery arrangements?",
+    "answer": "Share your delivery requirements, destination, and timing with Sales when requesting a quote or placing an order. The team can confirm available arrangements and any additional costs."
+  },
+  {
+    "question": "What should I do if my quote has incorrect details?",
+    "answer": "Contact the sales representative who issued the quote and identify the incorrect details. Include the quote reference and the corrected information needed."
+  },
+  {
+    "question": "How do I request a sales meeting?",
+    "answer": "Contact the Sales team with your organization, topics to discuss, preferred dates, and meeting format. A representative will coordinate a time."
+  },
+  {
+    "question": "Can Sales provide product specifications?",
+    "answer": "Yes. Ask Sales for the specification sheet or documentation for the product you are considering. Include its name or item number so the team can provide the correct information."
+  },
+  {
+    "question": "How can I contact the Sales department?",
+    "answer": "Use the sales contact information in the customer portal or company directory. Include your account or quote reference where applicable, and do not send sensitive payment details through unsecured email."
+  }
+]

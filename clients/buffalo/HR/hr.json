@@ -1,0 +1,82 @@
+[
+	{
+		"question": "How do I get started on my first day?",
+		"answer": "Your manager or HR contact can share your orientation schedule, workspace details, and any required onboarding steps. Bring any documents requested before your start date."
+	},
+	{
+		"question": "Where can I find the employee handbook?",
+		"answer": "Check your organization's employee portal or ask HR for the current handbook. It contains the latest workplace policies, procedures, and employee resources."
+	},
+	{
+		"question": "How do I update my home address or phone number?",
+		"answer": "Update your personal details in the employee self-service system, if available. Contact HR if you cannot access the system or need help confirming the change."
+	},
+	{
+		"question": "How do I change my tax or direct-deposit information?",
+		"answer": "Use the secure payroll or employee self-service portal to update this information. For your protection, do not send bank or tax details through an unsecured email."
+	},
+	{
+		"question": "When will I receive my paycheck?",
+		"answer": "Pay dates and payroll processing schedules depend on your organization's payroll calendar. Check the employee portal or ask the payroll or HR team for the current schedule."
+	},
+	{
+		"question": "Where can I view my pay statement?",
+		"answer": "Pay statements are typically available through the payroll or employee self-service portal. Contact payroll or HR if you cannot sign in or a statement appears to be missing."
+	},
+	{
+		"question": "How do I request time off?",
+		"answer": "Submit a time-off request through your organization's leave or scheduling system and follow your team's notification process. Your manager can explain approval steps and coverage expectations."
+	},
+	{
+		"question": "Who should I notify if I am sick and cannot work?",
+		"answer": "Notify your manager as soon as practical and follow your team's absence-reporting procedure. Check the employee handbook for applicable sick leave and documentation requirements."
+	},
+	{
+		"question": "How can I check my remaining leave balance?",
+		"answer": "Your leave balance may be shown in the employee self-service or timekeeping system. If the balance looks incorrect, contact HR or payroll with the relevant dates."
+	},
+	{
+		"question": "How do I enroll in or change my benefits?",
+		"answer": "Review the benefits information in your employee portal and follow the enrollment or change process provided there. Contact the benefits team or HR for deadlines and eligibility details."
+	},
+	{
+		"question": "What should I do if I need a workplace accommodation?",
+		"answer": "Contact HR to discuss the accommodation process and the information needed to evaluate your request. HR can explain the available options and how your information will be handled."
+	},
+	{
+		"question": "How do I report harassment or discrimination?",
+		"answer": "Report your concern to HR or use the reporting channel described in your organization's policies. If you feel unsafe or the concern involves your usual contact, use another listed reporting option."
+	},
+	{
+		"question": "What should I do if I have a conflict with a coworker?",
+		"answer": "If you feel comfortable, address the issue respectfully and directly. You can also speak with your manager or HR for support, especially if the issue continues or involves inappropriate conduct."
+	},
+	{
+		"question": "How can I update my emergency contact?",
+		"answer": "Update your emergency contact through the employee self-service system, if available, or ask HR to help you make the change. Review the details periodically to keep them current."
+	},
+	{
+		"question": "How do performance reviews work?",
+		"answer": "Review schedules and formats vary by organization. Your manager or HR can explain the review cycle, expectations, and where to find any forms or preparation materials."
+	},
+	{
+		"question": "How can I find training or professional development opportunities?",
+		"answer": "Check your organization's learning portal or internal announcements, and discuss development goals with your manager. HR can help identify available programs and any enrollment requirements."
+	},
+	{
+		"question": "How do I request employment verification?",
+		"answer": "Submit a request through the HR or employment verification process listed in your employee portal. Include the recipient and any required authorization so HR can respond appropriately."
+	},
+	{
+		"question": "How do I request a copy of my personnel records?",
+		"answer": "Contact HR to learn how to submit a records request. Access and processing requirements may depend on company policy and applicable local laws."
+	},
+	{
+		"question": "What should I do when I am leaving the organization?",
+		"answer": "Notify your manager and HR, and follow the offboarding steps provided by your organization. These may include returning equipment, completing final paperwork, and confirming benefits or final-pay details."
+	},
+	{
+		"question": "How can I contact the HR department?",
+		"answer": "Use the HR contact details in your employee portal or internal directory. If you are unsure which HR representative to contact, send your question to the general HR inbox or service desk."
+	}
+]

@@ -1,0 +1,82 @@
+[
+	{
+		"question": "How do I create a customer account?",
+		"answer": "Use the sign-up option on the service or contact the account team for assistance. Provide only the information requested and follow the verification steps shown during registration."
+	},
+	{
+		"question": "How do I sign in to my account?",
+		"answer": "Open the organization's sign-in page and enter the email address or username associated with your account. If you cannot sign in, use the password recovery option or contact support."
+	},
+	{
+		"question": "I forgot my password. How can I reset it?",
+		"answer": "Select the password reset option on the sign-in page and follow the instructions sent to your registered email address. If the message does not arrive, check your spam folder or contact support."
+	},
+	{
+		"question": "How do I change the email address on my account?",
+		"answer": "Sign in and update your email address in the account profile or settings. You may need to verify the new address before it becomes the primary contact for the account."
+	},
+	{
+		"question": "How can I update my billing address?",
+		"answer": "Open the billing or account settings page and edit the billing address. If you do not have access to those settings, contact the account or billing team."
+	},
+	{
+		"question": "Where can I update my payment method?",
+		"answer": "Go to the billing section of your account and choose the option to add or update a payment method. Use the secure payment form and do not send card details by email."
+	},
+	{
+		"question": "How do I download an invoice or receipt?",
+		"answer": "Sign in and open the billing history or invoices section. Select the relevant transaction to view or download its invoice or receipt. Contact billing support if a document is missing."
+	},
+	{
+		"question": "Why was my payment declined?",
+		"answer": "A payment may be declined because of incorrect payment details, a bank restriction, or an expired payment method. Confirm your details and contact your bank or the billing team for the decline reason."
+	},
+	{
+		"question": "How do I update my subscription plan?",
+		"answer": "Open the subscription or plan settings in your account and select an available plan. Review any price or feature changes before confirming the update."
+	},
+	{
+		"question": "How can I cancel my subscription?",
+		"answer": "Use the cancellation option in your subscription settings and follow the confirmation steps. Review the cancellation terms and effective date shown for your account."
+	},
+	{
+		"question": "When will my subscription renew?",
+		"answer": "Your renewal date is usually shown in the subscription or billing section of your account. Check that page for the current billing period and renewal details."
+	},
+	{
+		"question": "How do I request a refund?",
+		"answer": "Contact the billing or support team with your account details and transaction reference. Refund eligibility and processing time depend on the applicable purchase terms."
+	},
+	{
+		"question": "How can I see my recent account activity?",
+		"answer": "Look for an activity, transactions, or history section in your account dashboard. If you see an unfamiliar action, secure your account and contact support promptly."
+	},
+	{
+		"question": "How do I enable two-factor authentication?",
+		"answer": "Open the security settings for your account and follow the steps to enable two-factor authentication. Keep backup codes in a secure place if the service provides them."
+	},
+	{
+		"question": "What should I do if I think my account was compromised?",
+		"answer": "Change your password from a trusted device, enable two-factor authentication if available, and contact support. Review recent account activity and update any affected security details."
+	},
+	{
+		"question": "How do I add another user to an account?",
+		"answer": "If your plan supports additional users, open the user or team management settings and send an invitation to the person's email address. Assign only the access they need."
+	},
+	{
+		"question": "How can I change a user's access permissions?",
+		"answer": "An account administrator can manage roles or permissions in the user management settings. Review the available roles and grant the minimum access needed for each user."
+	},
+	{
+		"question": "How do I close or delete my account?",
+		"answer": "Review the account closure information in settings or contact support to request closure. Before confirming, download any records you need and check for active subscriptions or unpaid balances."
+	},
+	{
+		"question": "Can I have more than one account?",
+		"answer": "Whether multiple accounts are allowed depends on the service's terms and account setup. Check the applicable policy or ask support before creating another account."
+	},
+	{
+		"question": "How do I contact account support?",
+		"answer": "Use the support link in the account portal or the contact details provided by the service. Include a brief description of the issue and avoid sharing your password or full payment details."
+	}
+]
